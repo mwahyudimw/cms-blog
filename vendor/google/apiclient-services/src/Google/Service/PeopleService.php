@@ -60,7 +60,7 @@ class Google_Service_PeopleService extends Google_Service
   /** See and download your personal phone numbers. */
   const USER_PHONENUMBERS_READ =
       "https://www.googleapis.com/auth/user.phonenumbers.read";
-  /** View your email address. */
+  /** See your primary Google Account email address. */
   const USERINFO_EMAIL =
       "https://www.googleapis.com/auth/userinfo.email";
   /** See your personal info, including any personal info you've made publicly available. */
@@ -271,7 +271,19 @@ class Google_Service_PeopleService extends Google_Service
         'people',
         array(
           'methods' => array(
-            'createContact' => array(
+            'batchCreateContacts' => array(
+              'path' => 'v1/people:batchCreateContacts',
+              'httpMethod' => 'POST',
+              'parameters' => array(),
+            ),'batchDeleteContacts' => array(
+              'path' => 'v1/people:batchDeleteContacts',
+              'httpMethod' => 'POST',
+              'parameters' => array(),
+            ),'batchUpdateContacts' => array(
+              'path' => 'v1/people:batchUpdateContacts',
+              'httpMethod' => 'POST',
+              'parameters' => array(),
+            ),'createContact' => array(
               'path' => 'v1/people:createContact',
               'httpMethod' => 'POST',
               'parameters' => array(
@@ -410,6 +422,11 @@ class Google_Service_PeopleService extends Google_Service
                 'readMask' => array(
                   'location' => 'query',
                   'type' => 'string',
+                ),
+                'sources' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
                 ),
               ),
             ),'searchDirectoryPeople' => array(

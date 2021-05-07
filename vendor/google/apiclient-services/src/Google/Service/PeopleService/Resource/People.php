@@ -26,6 +26,50 @@
 class Google_Service_PeopleService_Resource_People extends Google_Service_Resource
 {
   /**
+   * Create a batch of new contacts and return the PersonResponses for the newly
+   * created contacts. Limited to 10 parallel requests per user.
+   * (people.batchCreateContacts)
+   *
+   * @param Google_Service_PeopleService_BatchCreateContactsRequest $postBody
+   * @param array $optParams Optional parameters.
+   * @return Google_Service_PeopleService_BatchCreateContactsResponse
+   */
+  public function batchCreateContacts(Google_Service_PeopleService_BatchCreateContactsRequest $postBody, $optParams = array())
+  {
+    $params = array('postBody' => $postBody);
+    $params = array_merge($params, $optParams);
+    return $this->call('batchCreateContacts', array($params), "Google_Service_PeopleService_BatchCreateContactsResponse");
+  }
+  /**
+   * Delete a batch of contacts. Any non-contact data will not be deleted. Limited
+   * to 10 parallel requests per user. (people.batchDeleteContacts)
+   *
+   * @param Google_Service_PeopleService_BatchDeleteContactsRequest $postBody
+   * @param array $optParams Optional parameters.
+   * @return Google_Service_PeopleService_PeopleEmpty
+   */
+  public function batchDeleteContacts(Google_Service_PeopleService_BatchDeleteContactsRequest $postBody, $optParams = array())
+  {
+    $params = array('postBody' => $postBody);
+    $params = array_merge($params, $optParams);
+    return $this->call('batchDeleteContacts', array($params), "Google_Service_PeopleService_PeopleEmpty");
+  }
+  /**
+   * Update a batch of contacts and return a map of resource names to
+   * PersonResponses for the updated contacts. Limited to 10 parallel requests per
+   * user. (people.batchUpdateContacts)
+   *
+   * @param Google_Service_PeopleService_BatchUpdateContactsRequest $postBody
+   * @param array $optParams Optional parameters.
+   * @return Google_Service_PeopleService_BatchUpdateContactsResponse
+   */
+  public function batchUpdateContacts(Google_Service_PeopleService_BatchUpdateContactsRequest $postBody, $optParams = array())
+  {
+    $params = array('postBody' => $postBody);
+    $params = array_merge($params, $optParams);
+    return $this->call('batchUpdateContacts', array($params), "Google_Service_PeopleService_BatchUpdateContactsResponse");
+  }
+  /**
    * Create a new contact and return the person resource for that contact. The
    * request returns a 400 error if more than one field is specified on a field
    * that is a singleton for contact sources: * biographies * birthdays * genders
@@ -207,11 +251,15 @@ class Google_Service_PeopleService_Resource_People extends Google_Service_Resour
   }
   /**
    * Provides a list of contacts in the authenticated user's grouped contacts that
-   * matches the search query. (people.searchContacts)
+   * matches the search query. The query matches on a contact's `names`,
+   * `nickNames`, `emailAddresses`, `phoneNumbers`, and `organizations` fields
+   * that are from the CONTACT" source. (people.searchContacts)
    *
    * @param array $optParams Optional parameters.
    *
-   * @opt_param int pageSize Optional. The number of results to return.
+   * @opt_param int pageSize Optional. The number of results to return. Defaults
+   * to 10 if field is not set, or set to 0. Values greater than 10 will be capped
+   * to 10.
    * @opt_param string query Required. The plain-text query for the request. The
    * query is used to match prefix phrases of the fields on a person. For example,
    * a person with name "foo name" matches queries such as "f", "fo", "foo", "foo
@@ -224,6 +272,8 @@ class Google_Service_PeopleService_Resource_People extends Google_Service_Resour
    * memberships * metadata * miscKeywords * names * nicknames * occupations *
    * organizations * phoneNumbers * photos * relations * sipAddresses * skills *
    * urls * userDefined
+   * @opt_param string sources Optional. A mask of what source types to return.
+   * Defaults to READ_SOURCE_TYPE_CONTACT if not set.
    * @return Google_Service_PeopleService_SearchResponse
    */
   public function searchContacts($optParams = array())

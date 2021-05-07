@@ -30,12 +30,12 @@
  */
 class Google_Service_WebRisk extends Google_Service
 {
-  /** View and manage your data across Google Cloud Platform services. */
+  /** See, edit, configure, and delete your Google Cloud Platform data. */
   const CLOUD_PLATFORM =
       "https://www.googleapis.com/auth/cloud-platform";
 
   public $hashes;
-  public $operations;
+  public $projects_operations;
   public $projects_submissions;
   public $projects_uris;
   public $threatLists;
@@ -80,7 +80,7 @@ class Google_Service_WebRisk extends Google_Service
           )
         )
     );
-    $this->operations = new Google_Service_WebRisk_Resource_Operations(
+    $this->projects_operations = new Google_Service_WebRisk_Resource_ProjectsOperations(
         $this,
         $this->serviceName,
         'operations',
@@ -117,7 +117,7 @@ class Google_Service_WebRisk extends Google_Service
                 ),
               ),
             ),'list' => array(
-              'path' => 'v1/{+name}',
+              'path' => 'v1/{+name}/operations',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'name' => array(

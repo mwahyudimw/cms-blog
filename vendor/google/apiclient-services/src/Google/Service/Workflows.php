@@ -19,8 +19,8 @@
  * Service definition for Workflows (v1).
  *
  * <p>
- * Orchestrate Workflows consisting of Google Cloud APIs, SaaS APIs or private
- * API endpoints.</p>
+ * Manage workflow definitions. To execute workflows and manage executions, see
+ * the Workflows Executions API.</p>
  *
  * <p>
  * For more information about this service, see the API
@@ -31,7 +31,7 @@
  */
 class Google_Service_Workflows extends Google_Service
 {
-  /** View and manage your data across Google Cloud Platform services. */
+  /** See, edit, configure, and delete your Google Cloud Platform data. */
   const CLOUD_PLATFORM =
       "https://www.googleapis.com/auth/cloud-platform";
 
