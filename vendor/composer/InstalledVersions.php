@@ -32,7 +32,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '7c7f0321f4de245c33adf2ac1796f4c9bf0af6af',
+    'reference' => '6cb7d210eea0c47d9409ab0d620dea7aee4c66c1',
     'name' => 'mwahyudim/cms-blog',
   ),
   'versions' => 
@@ -838,7 +838,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '7c7f0321f4de245c33adf2ac1796f4c9bf0af6af',
+      'reference' => '6cb7d210eea0c47d9409ab0d620dea7aee4c66c1',
     ),
     'myclabs/deep-copy' => 
     array (

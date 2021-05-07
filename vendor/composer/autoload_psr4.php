@@ -10,7 +10,7 @@ return array(
     'phpseclib3\\' => array($vendorDir . '/phpseclib/phpseclib/phpseclib'),
     'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/reflection-docblock/src', $vendorDir . '/phpdocumentor/type-resolver/src'),
     'ZipStream\\' => array($vendorDir . '/maennchen/zipstream-php/src'),
-    'Yajra\\DataTables\\' => array($vendorDir . '/yajra/laravel-datatables-oracle/src', $vendorDir . '/yajra/laravel-datatables-html/src', $vendorDir . '/yajra/laravel-datatables-buttons/src'),
+    'Yajra\\DataTables\\' => array($vendorDir . '/yajra/laravel-datatables-buttons/src', $vendorDir . '/yajra/laravel-datatables-html/src', $vendorDir . '/yajra/laravel-datatables-oracle/src'),
     'Whoops\\' => array($vendorDir . '/filp/whoops/src/Whoops'),
     'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),
     'TijsVerkoyen\\CssToInlineStyles\\' => array($vendorDir . '/tijsverkoyen/css-to-inline-styles/src'),
